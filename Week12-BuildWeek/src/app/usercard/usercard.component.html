@@ -1,0 +1,71 @@
+<div class="post">
+  <div class="flex">
+    <span><svg (click)="clickMT()" width="30" height="31" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_i_113_79)">
+        <path d="M1.25 16.6411H18.75V17.9212H1.25V16.6411Z" fill="white"/>
+        <path d="M16.359 5.47492C16.859 4.96289 16.859 4.19484 16.359 3.6828L14.109 1.37865C13.609 0.866621 12.859 0.866621 12.359 1.37865L2.98401 10.9793V15.0756H6.98401L16.359 5.47492ZM13.234 2.27471L15.484 4.57886L13.609 6.49899L11.359 4.19484L13.234 2.27471ZM4.23401 13.7955V11.4913L10.484 5.0909L12.734 7.39505L6.48401 13.7955H4.23401Z" fill="white"/>
+      </g>
+      <defs>
+        <filter id="filter0_i_113_79" x="1.25" y="0.994629" width="17.5" height="20.9265" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="shape" result="effect1_innerShadow_113_79"/>
+        </filter>
+      </defs>
+    </svg></span> <h3 *ngIf="!activeMT">{{post.title}}</h3>
+    <form [formGroup]="formT" (ngSubmit)="modTitle()" *ngIf="activeMT">
+      <input type="text" formControlName="title">
+      <button type="submit" class="modifica">Modifica</button>
+    </form>
+  </div>
+  <div class="flex">
+    <svg (click)="clickMB()" width="30" height="31" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_i_113_79)">
+        <path d="M1.25 16.6411H18.75V17.9212H1.25V16.6411Z" fill="white"/>
+        <path d="M16.359 5.47492C16.859 4.96289 16.859 4.19484 16.359 3.6828L14.109 1.37865C13.609 0.866621 12.859 0.866621 12.359 1.37865L2.98401 10.9793V15.0756H6.98401L16.359 5.47492ZM13.234 2.27471L15.484 4.57886L13.609 6.49899L11.359 4.19484L13.234 2.27471ZM4.23401 13.7955V11.4913L10.484 5.0909L12.734 7.39505L6.48401 13.7955H4.23401Z" fill="white"/>
+      </g>
+      <defs>
+        <filter id="filter0_i_113_79" x="1.25" y="0.994629" width="17.5" height="20.9265" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="shape" result="effect1_innerShadow_113_79"/>
+        </filter>
+      </defs>
+    </svg>
+    <p *ngIf="!activeMB"> {{post.body}}</p>
+    <form [formGroup]="formB" (ngSubmit)="modBody()" *ngIf="activeMB">
+      <textarea formControlName="body" ></textarea>
+      <button type="submit" class="modifica">Modifica</button>
+    </form>
+  </div>
+  <div class="bottoni">
+    <button class="elimina" (click)="clickModal()">Elimina</button>
+    <button (click)="dammiId()" routerLink="/commenti">Commenti</button>
+  </div>
+</div>
+
+<div class="modal hidden" *ngIf="modal">
+  <div class="modalBox">
+      <div class="modalH"></div>
+      <div class="modalBody">
+          <p class="modalText">Vuoi procedere con l'azione?</p>
+          <div class="modalBt">
+              <button id="annulla" (click)="closeModal()">Annulla</button>
+              <button id="accetta" (click)="deletePost()" class="elimina">Accetta</button>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+

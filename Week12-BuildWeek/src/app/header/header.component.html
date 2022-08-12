@@ -1,0 +1,10 @@
+<div>
+  <h1 *ngIf="!isLogged">Entra nella community!</h1>
+  <h1 *ngIf="isLogged">Benvenuto nella community</h1>
+  <p *ngIf="isLogged">Scrolla per scoprire i nostri contenuti!</p>
+<button routerLink="/signup" *ngIf="!isLogged">Signup</button>
+<li><a routerLink="/login" *ngIf="!isLogged">Se hai già un account, fai il Login.</a></li>
+</div>
+<svg  viewBox="0 0 1200 379" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0H1200V379L0 0Z" fill="#F4E5DD"/>
+  </svg>

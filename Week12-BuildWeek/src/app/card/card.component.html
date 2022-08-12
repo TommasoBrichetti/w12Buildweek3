@@ -1,0 +1,13 @@
+<div class="user" [ngClass]="{'mineP': mineP}">
+  <h4>Nome: {{user[0].name}}</h4>
+  <h4>Username: {{user[0].username}}</h4>
+  <h4 *ngIf="dettagli">Email: {{user[0].email}}  </h4>
+  <h4 *ngIf="dettagli">Età: {{user[0].age}}</h4>
+  <button (click)="mostraDettagli()" *ngIf="!dettagli">Mostra Dettagli</button>
+  <button (click)="mostraDettagli()" *ngIf="dettagli">Nascondi Dettagli</button>
+</div>
+<div class="post">
+  <h3>{{post.title}}</h3>
+  <p>{{post.body}}</p>
+  <button (click)="dammiId()" routerLink="/commenti">Commenti</button>
+</div>

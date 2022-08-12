@@ -1,0 +1,31 @@
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #77A8A6;
+  background-color: #D9D9D9;
+  border-bottom: solid 3px #77A8A6 ;
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // margin-bottom: 5vh;
+  ul{
+    display: flex;
+    justify-content: space-around;
+    li{
+      list-style: none;
+      margin-left: 1em;
+      a{
+        font-size: 1.3em;
+        text-decoration: none;
+        color: #77A8A6;
+        cursor: pointer;
+      }
+    }
+  }
+  svg{
+    cursor: pointer;
+  }
+}

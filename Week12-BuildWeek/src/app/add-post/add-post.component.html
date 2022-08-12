@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submit() " *ngIf="!succes">
+  <h2>Aggiungi il tuo Post</h2>
+  <span [ngStyle]="{'visibility':error ? 'visible' : 'hidden'}">
+    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1.2V8.4C0 9.0618 0.5382 9.6 1.2 9.6H3.3L5.4 12L7.5 9.6H9.6C10.2618 9.6 10.8 9.0618 10.8 8.4V1.2C10.8 0.5382 10.2618 0 9.6 0H1.2C0.5382 0 0 0.5382 0 1.2ZM4.8 1.8H6V5.4H4.8V1.8ZM4.8 6.6H6V7.8H4.8V6.6Z" fill="#CC0000"/>
+      </svg> Completa tutti i campi!
+  </span>
+<p>Titolo</p>
+<input type="text" formControlName="title" placeholder="Title">
+<p>Post</p>
+<textarea formControlName="body" placeholder="Post" ></textarea>
+<button type="submit">Aggiungi Post</button>
+</form>
+<div class="success" *ngIf="succes">
+ <h2>Post aggiunto con successo</h2>
+ <button routerLink="/">Continua alla home</button>
+</div>

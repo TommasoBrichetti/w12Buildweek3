@@ -1,0 +1,15 @@
+app-post{
+  position: relative;
+  bottom: 400px;
+  @media screen and (max-width: 1024px){
+    bottom: 200px;
+
+  }
+}
+svg{
+  position: fixed;
+  z-index: 1000000000;
+  top: 80%;
+  right: 2px;
+  cursor: pointer;
+}

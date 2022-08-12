@@ -1,0 +1,43 @@
+
+<form [formGroup]="form" (ngSubmit)="signup()" *ngIf="!isLogged" >
+  <h2>SignUp</h2>
+  <span [ngStyle]="{'visibility':dirty ? 'visible' : 'hidden'}">
+    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1.2V8.4C0 9.0618 0.5382 9.6 1.2 9.6H3.3L5.4 12L7.5 9.6H9.6C10.2618 9.6 10.8 9.0618 10.8 8.4V1.2C10.8 0.5382 10.2618 0 9.6 0H1.2C0.5382 0 0 0.5382 0 1.2ZM4.8 1.8H6V5.4H4.8V1.8ZM4.8 6.6H6V7.8H4.8V6.6Z" fill="#CC0000"/>
+      </svg> Controlla di aver compilato tutti i campi!
+  </span>
+  <span [ngStyle]="{'visibility':match ? 'visible' : 'hidden'}">
+    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1.2V8.4C0 9.0618 0.5382 9.6 1.2 9.6H3.3L5.4 12L7.5 9.6H9.6C10.2618 9.6 10.8 9.0618 10.8 8.4V1.2C10.8 0.5382 10.2618 0 9.6 0H1.2C0.5382 0 0 0.5382 0 1.2ZM4.8 1.8H6V5.4H4.8V1.8ZM4.8 6.6H6V7.8H4.8V6.6Z" fill="#CC0000"/>
+      </svg> Le password non coincidono!
+  </span>
+  <span [ngStyle]="{'visibility':error ? 'visible' : 'hidden'}">
+    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1.2V8.4C0 9.0618 0.5382 9.6 1.2 9.6H3.3L5.4 12L7.5 9.6H9.6C10.2618 9.6 10.8 9.0618 10.8 8.4V1.2C10.8 0.5382 10.2618 0 9.6 0H1.2C0.5382 0 0 0.5382 0 1.2ZM4.8 1.8H6V5.4H4.8V1.8ZM4.8 6.6H6V7.8H4.8V6.6Z" fill="#CC0000"/>
+      </svg> Form non valido, controlla gli errori!
+  </span>
+  <p>Name</p>
+  <input type="text" formControlName="name" placeholder="nome">
+  <p>Username</p>
+  <input type="text" formControlName="username" placeholder="username">
+  <p>Email</p>
+  <span *ngIf="emailEr">
+    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1.2V8.4C0 9.0618 0.5382 9.6 1.2 9.6H3.3L5.4 12L7.5 9.6H9.6C10.2618 9.6 10.8 9.0618 10.8 8.4V1.2C10.8 0.5382 10.2618 0 9.6 0H1.2C0.5382 0 0 0.5382 0 1.2ZM4.8 1.8H6V5.4H4.8V1.8ZM4.8 6.6H6V7.8H4.8V6.6Z" fill="#CC0000"/>
+      </svg> Mail non valida
+  </span>
+  <input type="email" name="email" placeholder="email" formControlName="email">
+
+  <p>Age</p>
+  <input type="number" formControlName="age" placeholder="age">
+  <p>Password</p>
+  <input type="password" formControlName="password" placeholder="password">
+  <p>Repeat Password</p>
+  <input type="password" formControlName="rPassword" placeholder="repeat Password">
+  <button type="submit">SignUp</button>
+</form>
+
+<div *ngIf="isLogged">
+  <h2>Benvenuto {{this.form.controls["username"].value}}</h2>
+  <button [routerLink]="['/']">Continua sul sito</button>
+</div>

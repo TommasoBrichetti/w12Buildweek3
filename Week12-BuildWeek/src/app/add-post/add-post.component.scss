@@ -1,0 +1,65 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh 0;
+  padding: 10vh 0;
+  background-color: #77A8A6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+p{
+  color: white;
+  margin: 1rem 0;
+}
+span{
+  color: #cc0000;
+  font-size: 13px;
+}
+button{
+  margin: 1rem 0;
+  background-color: #A89488 ;
+  color: white;
+  padding: .7em 4em;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // transition:transform .1s ease-out;
+}
+button:hover{
+  box-shadow: none;
+  cursor: pointer;
+  transform: translateY(4px);
+}
+input{
+  padding: 1.5vh 1rem;
+  width: 50%;
+  border-radius: 100px;
+  border: none;
+}
+h2{
+  color: white;
+  margin-bottom: 7vh;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 2rem;
+}
+textarea{
+  padding: 1.5vh 1rem;
+  width: 50%;
+  border-radius: 100px;
+  border: none;
+}
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh 0;
+  padding: 10vh 0;
+  background-color: #77A8A6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+span{
+  color: #cc0000;
+  font-size: 13px;
+}

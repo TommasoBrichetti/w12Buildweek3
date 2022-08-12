@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="login()" *ngIf="!isLogged">
+  <h2>Login</h2>
+   <span [ngStyle]="{'visibility':error ? 'visible' : 'hidden'}">
+    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1.2V8.4C0 9.0618 0.5382 9.6 1.2 9.6H3.3L5.4 12L7.5 9.6H9.6C10.2618 9.6 10.8 9.0618 10.8 8.4V1.2C10.8 0.5382 10.2618 0 9.6 0H1.2C0.5382 0 0 0.5382 0 1.2ZM4.8 1.8H6V5.4H4.8V1.8ZM4.8 6.6H6V7.8H4.8V6.6Z" fill="#CC0000"/>
+      </svg> Email o password non valida!
+    </span>
+  <p>Email</p>
+  <input type="email" name="email" placeholder="email" formControlName="email" required="">
+  <p>Password</p>
+  <input type="password" formControlName="password" placeholder="password" required="">
+  <button type="submit">Login</button>
+</form>
+
+<div *ngIf="isLogged">
+    <h2>LOGIN AVVENUTO</h2>
+    <button [routerLink]="['/']">Continua sul sito</button>
+</div>
